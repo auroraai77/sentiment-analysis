@@ -1,0 +1,44 @@
+UW PICO 5.09                       File: evaluate.py                          
+
+import torch
+from transformers import BertTokenizer, BertForSequenceClassification
+from sklearn.metrics import classification_report
+import pandas as pd
+
+def evaluate(path="sample_reviews.csv"):
+    df = pd.read_csv(path)
+    texts, labels = df["review"].tolist(), df["label"].tolist()
+
+    tokenizer = BertTokenizer.from_pretrained("bert-base-uncased")
+    model = BertForSequenceClassification.from_pretrained("./models/best_model")
+
+    encodings = tokenizer(texts, truncation=True, padding=True, return_tensors=$
+
+    outputs = model(**encodings)
+    preds = torch.argmax(outputs.logits, dim=-1).tolist()
+
+    print(classification_report(labels, preds))
+
+
+^G Get Help  ^O WriteOut  ^R Read File ^Y Prev Pg   ^K Cut Text  ^C Cur Pos   
+^X Exit      ^J Justify   ^W Where is  ^V Next Pg   ^U UnCut Text^T To Speimport torch
+from transformers import BertTokenizer, BertForSequenceClassification
+from sklearn.metrics import classification_report
+import pandas as pd
+
+def evaluate(path="sample_reviews.csv"):
+    df = pd.read_csv(path)
+    texts, labels = df["review"].tolist(), df["label"].tolist()
+
+    tokenizer = BertTokenizer.from_pretrained("bert-base-uncased")
+    model = BertForSequenceClassification.from_pretrained("./models/best_model")
+
+    encodings = tokenizer(texts, truncation=True, padding=True, return_tensors="pt")
+
+    outputs = model(**encodings)
+    preds = torch.argmax(outputs.logits, dim=-1).tolist()
+
+    print(classification_report(labels, preds))
+
+if __name__ == "__main__":
+    evaluate()

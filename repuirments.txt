@@ -1,0 +1,9 @@
+cat > requirements.txt << 'PY'
+torch
+transformers
+streamlit
+pandas
+numpy
+scikit-learn
+PY
+
