@@ -1,36 +1,35 @@
-# Sentiment Analysis of Product Reviews
+cat > README.md << 'MD'
+# 📝 Sentiment Analysis of Product Reviews
 
-This project implements a Natural Language Processing (NLP) pipeline to classify product reviews as **positive**, **negative**, or **neutral**.  
-It leverages transformer-based language models to achieve state-of-the-art performance and includes an interactive dashboard built with Streamlit.
+This project implements a **sentiment analysis web app** using **DistilBERT** (a lighter version of BERT) fine-tuned on the SST-2 dataset.  
+It classifies product reviews into two categories:  
+- ✅ Positive  
+- ❌ Negative  
 
----
-
-## 🚀 Key Features
-- Preprocessing of raw text data (tokenization, cleaning, embeddings).
-- Fine-tuned transformer model (Hugging Face Transformers + PyTorch).
-- Evaluation with accuracy, F1-score, and confusion matrix.
-- Interactive **Streamlit dashboard** for real-time predictions.
-- Modular, production-ready code structure.
+Built with **Python, Hugging Face Transformers, and Streamlit**.
 
 ---
 
-## 🛠️ Technologies Used
-- Python
+## 🚀 Features
+- Analyze a **single review**.
+- Batch analysis of **multiple reviews at once**.
+- Shows individual predictions and a **summary** (Positive vs Negative).
+- Lightweight, production-ready design.
+
+---
+
+## 🛠️ Tech Stack
+- Python 3.11+
+- [Transformers](https://huggingface.co/transformers/)
 - PyTorch
-- Hugging Face Transformers
-- SpaCy
-- NLTK
-- Scikit-learn
 - Streamlit
 
 ---
 
-## 📊 Results
-- **90% F1-score** on the Amazon review dataset.
-- Interactive web app for end-user testing.
+## 📦 Installation
 
----
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/<your-username>/sentiment-analysis.git
+   cd sentiment-analysis
 
-## 📂 Project Structure
-# sentiment-analysis
-NLP pipeline for classifying product reviews as positive, negative, or neutral using transformer models.
