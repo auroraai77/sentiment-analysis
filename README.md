@@ -1,4 +1,3 @@
-cat > README.md << 'MD'
 # 📝 Sentiment Analysis of Product Reviews
 
 This project implements a **sentiment analysis web app** using **DistilBERT** (a lighter version of BERT) fine-tuned on the SST-2 dataset.  
@@ -7,6 +6,10 @@ It classifies product reviews into two categories:
 - ❌ Negative  
 
 Built with **Python, Hugging Face Transformers, and Streamlit**.
+
+---
+
+![App Screenshot](sentiment-analysis.png)
 
 ---
 
@@ -32,4 +35,3 @@ Built with **Python, Hugging Face Transformers, and Streamlit**.
    ```bash
    git clone https://github.com/<your-username>/sentiment-analysis.git
    cd sentiment-analysis
-
